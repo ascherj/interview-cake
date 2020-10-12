@@ -1,4 +1,5 @@
 function mergeArrays(myArray, alicesArray) {
+  /*
   // I: two number[] representing list of orders
   // O: one number[] sorted in ascending order
   // C: n/a
@@ -18,9 +19,9 @@ function mergeArrays(myArray, alicesArray) {
     // shift lesser element
     // push into result
   // return result
-  
+  */
   const mergedArray = [];
-  
+
   while (myArray.length || alicesArray.length) {
     // first array empty
     if (!myArray.length) {
@@ -30,11 +31,12 @@ function mergeArrays(myArray, alicesArray) {
       mergedArray.push(myArray.shift());
       // neither array empty
     } else {
-      const elemToPush = myArray[0] <= alicesArray[0] ? myArray.shift() : alicesArray.shift();
+      const elemToPush =
+        myArray[0] <= alicesArray[0] ? myArray.shift() : alicesArray.shift();
       mergedArray.push(elemToPush);
     }
   }
-  
+
   return mergedArray;
 }
 
@@ -44,40 +46,41 @@ function mergeArrays(myArray, alicesArray) {
 // BONUS: Handle several sorted arrays (input: array of sorted arrays)
 //        Do we need to allocate a new array for the merged output?
 
+export default function () {
+  // Tests
 
-// Tests
+  let desc = 'both arrays are empty';
+  let actual = mergeArrays([], []);
+  let expected = [];
+  assertDeepEqual(actual, expected, desc);
 
-let desc = 'both arrays are empty';
-let actual = mergeArrays([], []);
-let expected = [];
-assertDeepEqual(actual, expected, desc);
+  desc = 'first array is empty';
+  actual = mergeArrays([], [1, 2, 3]);
+  expected = [1, 2, 3];
+  assertDeepEqual(actual, expected, desc);
 
-desc = 'first array is empty';
-actual = mergeArrays([], [1, 2, 3]);
-expected = [1, 2, 3];
-assertDeepEqual(actual, expected, desc);
+  desc = 'second array is empty';
+  actual = mergeArrays([5, 6, 7], []);
+  expected = [5, 6, 7];
+  assertDeepEqual(actual, expected, desc);
 
-desc = 'second array is empty';
-actual = mergeArrays([5, 6, 7], []);
-expected = [5, 6, 7];
-assertDeepEqual(actual, expected, desc);
+  desc = 'both arrays have some numbers';
+  actual = mergeArrays([2, 4, 6], [1, 3, 7]);
+  expected = [1, 2, 3, 4, 6, 7];
+  assertDeepEqual(actual, expected, desc);
 
-desc = 'both arrays have some numbers';
-actual = mergeArrays([2, 4, 6], [1, 3, 7]);
-expected = [1, 2, 3, 4, 6, 7];
-assertDeepEqual(actual, expected, desc);
+  desc = 'arrays are different lengths';
+  actual = mergeArrays([2, 4, 6, 8], [1, 7]);
+  expected = [1, 2, 4, 6, 7, 8];
+  assertDeepEqual(actual, expected, desc);
 
-desc = 'arrays are different lengths';
-actual = mergeArrays([2, 4, 6, 8], [1, 7]);
-expected = [1, 2, 4, 6, 7, 8];
-assertDeepEqual(actual, expected, desc);
-
-function assertDeepEqual(a, b, desc) {
-  const aStr = JSON.stringify(a);
-  const bStr = JSON.stringify(b);
-  if (aStr !== bStr) {
-    console.log(`${desc} ... FAIL: ${aStr} != ${bStr}`);
-  } else {
-    console.log(`${desc} ... PASS`);
+  function assertDeepEqual(a, b, desc) {
+    const aStr = JSON.stringify(a);
+    const bStr = JSON.stringify(b);
+    if (aStr !== bStr) {
+      console.log(`${desc} ... FAIL: ${aStr} != ${bStr}`);
+    } else {
+      console.log(`${desc} ... PASS`);
+    }
   }
 }

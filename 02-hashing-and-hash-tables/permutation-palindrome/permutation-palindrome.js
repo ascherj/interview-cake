@@ -30,15 +30,15 @@ function hasPalindromePermutation(theString) {
     return false
   return true
   */
-  
+
   // OBJECT-BASED SOLUTION
   // const charCounts = {};
-  
+
   // theString.split('').forEach(char => {
   //   const currentCount = charCounts[char];
   //   charCounts[char] = currentCount ? charCounts[char] + 1 : 1;
   // });
-  
+
   // const charCountValues = Object.values(charCounts);
   // let seenOdd = false;
   // for (let i = 0; i < charCountValues.length; i++) {
@@ -51,41 +51,47 @@ function hasPalindromePermutation(theString) {
   //   }
   // }
   // return true;
-  
+
   // SET-BASED SOLUTION
   const oddCounts = new Set();
-  theString.split('').forEach(char => oddCounts.has(char) ? oddCounts.delete(char) : oddCounts.add(char));
+  theString
+    .split('')
+    .forEach((char) =>
+      oddCounts.has(char) ? oddCounts.delete(char) : oddCounts.add(char)
+    );
   return oddCounts.size <= 1;
-  
+
   // COMPLEXITY ANALYSIS
   //  Time - O(n)
   //  Space - O(k) where k is the number of possible characters to be added to the set
 }
 
-// Tests
+export default function () {
+  // Tests
 
-let desc = 'permutation with odd number of chars';
-assertEqual(hasPalindromePermutation('aabcbcd'), true, desc);
+  let desc = 'permutation with odd number of chars';
+  assertEqual(hasPalindromePermutation('aabcbcd'), true, desc);
 
-desc = 'permutation with even number of chars';
-assertEqual(hasPalindromePermutation('aabccbdd'), true, desc);
+  desc = 'permutation with even number of chars';
+  assertEqual(hasPalindromePermutation('aabccbdd'), true, desc);
 
-desc = 'no permutation with odd number of chars';
-assertEqual(hasPalindromePermutation('aabcd'), false, desc);
+  desc = 'no permutation with odd number of chars';
+  assertEqual(hasPalindromePermutation('aabcd'), false, desc);
 
-desc = 'no permutation with even number of chars';
-assertEqual(hasPalindromePermutation('aabbcd'), false, desc);
+  desc = 'no permutation with even number of chars';
+  assertEqual(hasPalindromePermutation('aabbcd'), false, desc);
 
-desc = 'empty string';
-assertEqual(hasPalindromePermutation(''), true, desc);
+  desc = 'empty string';
+  assertEqual(hasPalindromePermutation(''), true, desc);
 
-desc = 'one character string ';
-assertEqual(hasPalindromePermutation('a'), true, desc);
+  desc = 'one character string ';
+  assertEqual(hasPalindromePermutation('a'), true, desc);
 
-function assertEqual(a, b, desc) {
-  if (a === b) {
-    console.log(`${desc} ... PASS`);
-  } else {
-    console.log(`${desc} ... FAIL: ${a} != ${b}`);
+  function assertEqual(a, b, desc) {
+    if (a === b) {
+      console.log(`${desc} ... PASS`);
+    } else {
+      console.log(`${desc} ... FAIL: ${a} != ${b}`);
+    }
   }
 }

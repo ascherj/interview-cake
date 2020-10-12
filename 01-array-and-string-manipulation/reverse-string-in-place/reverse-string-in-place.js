@@ -1,4 +1,5 @@
 function reverse(arrayOfChars) {
+  /*
   // I: string[] of chars
   // O: string[] w/ chars reversed
   // C: reverse in place
@@ -12,49 +13,52 @@ function reverse(arrayOfChars) {
     // set current index to other char
     // set other char to current char
   // return array
-  
+  */
+
   const mid = Math.floor(arrayOfChars.length / 2);
-  
+
   for (let i = 0; i < mid; i++) {
     const temp = arrayOfChars[i];
     const opposite = arrayOfChars[arrayOfChars.length - 1 - i];
     arrayOfChars[i] = opposite;
     arrayOfChars[arrayOfChars.length - 1 - i] = temp;
   }
-  
+
   return arrayOfChars;
 
   // Time complexity: O(n)
   // Space complexity: O(1);
 }
 
-// Tests
+export default function () {
+  // Tests
 
-let desc = 'empty string';
-let input = ''.split('');
-reverse(input);
-let actual = input.join('');
-let expected = '';
-assertEqual(actual, expected, desc);
+  let desc = 'empty string';
+  let input = ''.split('');
+  reverse(input);
+  let actual = input.join('');
+  let expected = '';
+  assertEqual(actual, expected, desc);
 
-desc = 'single character string';
-input = 'A'.split('');
-reverse(input);
-actual = input.join('');
-expected = 'A';
-assertEqual(actual, expected, desc);
+  desc = 'single character string';
+  input = 'A'.split('');
+  reverse(input);
+  actual = input.join('');
+  expected = 'A';
+  assertEqual(actual, expected, desc);
 
-desc = 'longer string';
-input = 'ABCDE'.split('');
-reverse(input);
-actual = input.join('');
-expected = 'EDCBA';
-assertEqual(actual, expected, desc);
+  desc = 'longer string';
+  input = 'ABCDE'.split('');
+  reverse(input);
+  actual = input.join('');
+  expected = 'EDCBA';
+  assertEqual(actual, expected, desc);
 
-function assertEqual(a, b, desc) {
-  if (a === b) {
-    console.log(`${desc} ... PASS`);
-  } else {
-    console.log(`${desc} ... FAIL: ${a} != ${b}`);
+  function assertEqual(a, b, desc) {
+    if (a === b) {
+      console.log(`${desc} ... PASS`);
+    } else {
+      console.log(`${desc} ... FAIL: ${a} != ${b}`);
+    }
   }
 }
