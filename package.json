@@ -16,5 +16,9 @@
     "url": "https://github.com/ascherj/interview-cake/issues"
   },
   "homepage": "https://github.com/ascherj/interview-cake#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "2.1.2"
+  }
 }
