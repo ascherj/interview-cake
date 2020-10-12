@@ -2,9 +2,9 @@
   "name": "interview-cake",
   "version": "1.0.0",
   "description": "A collection of my solutions to Interview Cake practice problems.",
-  "main": "index.js",
+  "main": "test.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
