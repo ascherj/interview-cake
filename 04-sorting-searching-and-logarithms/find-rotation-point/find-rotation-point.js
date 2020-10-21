@@ -53,9 +53,9 @@ function findRotationPoint(words) {
 //  return 0 for an unrotated array?
 
 
-// Tests
-
 export default function() {
+  // Tests
+  
   let desc = 'small array';
   let actual = findRotationPoint(['cape', 'cake']);
   let expected = 1;

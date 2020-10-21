@@ -97,9 +97,9 @@ function findRepeat(numbers) {
 }
 
 
-// Tests
-
 export default function() {
+  // Tests
+  
   let desc = 'just the repeated number';
   let actual = findRepeat([1, 1]);
   let expected = 1;
