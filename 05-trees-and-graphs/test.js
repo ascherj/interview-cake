@@ -3,6 +3,7 @@ import binarySearchTreeChecker from './binary-search-tree-checker/binary-search-
 import secondLargestItemInABinarySearchTree from './2nd-largest-item-in-a-binary-search-tree/2nd-largest-item-in-a-binary-search-tree.js';
 import graphColoring from './graph-coloring/graph-coloring.js';
 import MeshMessage from './MeshMessage/MeshMessage.js';
+import findRepeatSpaceEditionBEASTMODE from './find-repeat-space-edition-BEAST-MODE/find-repeat-space-edition-BEAST-MODE.js';
 
 export default function () {
   balancedBinaryTree();
@@ -10,4 +11,5 @@ export default function () {
   secondLargestItemInABinarySearchTree();
   graphColoring();
   MeshMessage();
+  findRepeatSpaceEditionBEASTMODE();
 }
