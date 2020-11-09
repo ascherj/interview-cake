@@ -3,13 +3,15 @@ import sectionTwoTests from './02-hashing-and-hash-tables/test.js';
 import sectionThreeTests from './03-greedy-algorithms/test.js';
 import sectionFourTests from './04-sorting-searching-and-logarithms/test.js';
 import sectionFiveTests from './05-trees-and-graphs/test.js';
+import sectionSixTests from './06-dynamic-programming-and-recursion/test.js';
 
 const tests = {
   1: sectionOneTests,
   2: sectionTwoTests,
   3: sectionThreeTests,
   4: sectionFourTests,
-  5: sectionFiveTests
+  5: sectionFiveTests,
+  6: sectionSixTests
 };
 
 function runAllTests() {
